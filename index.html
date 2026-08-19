@@ -168,7 +168,7 @@ footer a { color: var(--accent); }
         </div>
       </div>
       <div class="run-bar">
-        <div class="run-info" id="run-info">Estimated cost: $0.00 · 0 attacks selected</div>
+        <div class="run-info" id="run-info">Estimated cost: $0.00 &middot; 0 attacks selected</div>
         <button class="primary" id="run-btn" disabled>Run attacks</button>
       </div>
     </section>
@@ -184,7 +184,7 @@ footer a { color: var(--accent); }
 
   <footer>
     Single HTML file. No external scripts, no analytics. Your API key, system prompt, and the resulting model responses stay in your browser tab and are only sent to api.anthropic.com. This tool tests for extraction; it does not test for jailbreaks that bypass refusal behavior. Combine with a separate refusal-eval before shipping.
-    <br>MIT licensed. <a href="https://github.com/0xelitesystem/system-prompt-leak-tester">Source on GitHub</a> &middot; <a href="https://elitesystem.ai" target="_blank" rel="noopener">An elitesystem.ai tool</a> &middot; <a href="https://0xelitesystem.github.io/" target="_blank" rel="noopener">More tools</a> · <a href="https://github.com/0xelitesystem/prompt-injection-test-suite">Related: prompt-injection-test-suite</a>
+    <br>MIT licensed. <a href="https://github.com/0xelitesystem/system-prompt-leak-tester">Source on GitHub</a> &middot; <a href="https://elitesystem.ai" target="_blank" rel="noopener">An elitesystem.ai tool</a> &middot; <a href="https://0xelitesystem.github.io/" target="_blank" rel="noopener">More tools</a> &middot; <a href="https://github.com/0xelitesystem/prompt-injection-test-suite">Related: prompt-injection-test-suite</a>
   </footer>
 </div>
 
@@ -258,7 +258,7 @@ function updateRunInfo() {
   const sys = document.getElementById('sys-prompt').value;
   const model = document.getElementById('model').value;
   const cost = estCost(selected, sys.length, model);
-  document.getElementById('run-info').textContent = `Estimated cost: $${cost.toFixed(4)} · ${selected.length} attack${selected.length !== 1 ? 's' : ''} selected`;
+  document.getElementById('run-info').textContent = `Estimated cost: $${cost.toFixed(4)} &middot; ${selected.length} attack${selected.length !== 1 ? 's' : ''} selected`;
   const ready = selected.length > 0 && sys.trim().length > 0 && document.getElementById('api-key').value.trim().length > 0;
   document.getElementById('run-btn').disabled = !ready;
 }
@@ -370,7 +370,7 @@ async function runAttacks() {
     updateSummary();
   }
 
-  document.getElementById('results-progress').textContent = `Complete · ${done}/${attacks.length}`;
+  document.getElementById('results-progress').textContent = `Complete &middot; ${done}/${attacks.length}`;
   document.getElementById('run-btn').disabled = false;
 }
 
