@@ -6,6 +6,17 @@ A BYOK browser tool that runs 24 extraction attacks against your system prompt a
 
 Single HTML file. Calls go browser-direct to api.anthropic.com using your own API key.
 
+## Use
+
+1. Paste your Anthropic API key and choose a model.
+2. Paste the system prompt you want to test.
+3. Choose attacks with Select all, Select none, Select cheap, or the individual checkboxes, then click Run attacks.
+4. Read the leak, partial, safe, and error counts, then read each response to check the classifier.
+
+## Why this exists
+
+A system prompt often holds rules or details you do not want users to read back, and the only way to find out whether it leaks is to attack it. This tool runs a fixed set of extraction prompts with your own key, in one HTML file with no backend and no tracking, released under the MIT license.
+
 ## What it does
 
 You paste:
@@ -70,6 +81,17 @@ Verdict | What to do
 ## Privacy
 
 API key, system prompt, and responses are never transmitted to any server other than api.anthropic.com. The HTML file has no external scripts, fonts, or analytics. Verify by viewing source.
+
+When you click Run attacks, the page sends one request per selected attack directly from your browser to `https://api.anthropic.com/v1/messages`, carrying your API key, your system prompt, and the attack prompt. The key is read from the input field for that run and is not saved. If you use the theme toggle, your light or dark choice is saved in your browser's localStorage under the key `theme`. Nothing else is stored.
+
+## Run locally
+
+```
+git clone https://github.com/0xelitesystem/system-prompt-leak-tester
+cd system-prompt-leak-tester
+```
+
+Open `index.html` in a browser, or serve the folder with `python -m http.server` and visit http://localhost:8000.
 
 ## Build
 
