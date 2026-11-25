@@ -107,6 +107,6 @@ MIT.
 
 ## Related
 
-- [prompt-injection-test-suite](https://github.com/0xelitesystem/prompt-injection-test-suite): corpus of injection prompts (the data this tool's attacks were curated from)
+- [prompt-injection-attack-corpus](https://github.com/0xelitesystem/prompt-injection-attack-corpus): corpus of injection prompts (the data this tool's attacks were curated from)
 - [byok-security-checklist](https://github.com/0xelitesystem/byok-security-checklist): broader BYOK security posture
 - [ai-llm-security-audit](https://github.com/0xelitesystem/ai-llm-security-audit): end-to-end audit checklist
